@@ -89,6 +89,285 @@
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
 }
 
+/* Arte que Alimenta Section - Novo Design */
+.arte-alimenta {
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.arte-alimenta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    pointer-events: none;
+}
+
+.arte-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    z-index: 2;
+}
+
+.arte-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 50px;
+    color: var(--white);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.arte-badge i {
+    color: var(--secondary-color);
+}
+
+.arte-title {
+    font-size: var(--font-size-5xl);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.arte-subtitle {
+    font-size: var(--font-size-xl);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    margin-bottom: var(--spacing-lg);
+}
+
+.arte-hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--spacing-2xl);
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    z-index: 2;
+}
+
+.arte-hero-content {
+    color: var(--white);
+}
+
+.arte-creators h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.creator-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.creator {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 25px;
+    color: var(--white);
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.creator:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.arte-description {
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-lg);
+}
+
+.arte-hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arte-circle {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--secondary-color), #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.arte-circle i {
+    font-size: 4rem;
+    color: var(--white);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.arte-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    z-index: 2;
+}
+
+.arte-feature {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.arte-feature:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--secondary-color), #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-icon i {
+    font-size: var(--font-size-xl);
+    color: var(--white);
+}
+
+.feature-content h4 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.feature-content p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+}
+
+.arte-cta-section {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-large {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-lg);
+    background: var(--secondary-color);
+    color: var(--gray-900);
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-large:hover {
+    background: #f59e0b;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive design para Arte que Alimenta */
+@media (max-width: 768px) {
+    .arte-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+    
+    .arte-title {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .arte-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .arte-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .arte-circle i {
+        font-size: 3rem;
+    }
+    
+    .creator-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .arte-alimenta {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .arte-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .arte-subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .arte-feature {
+        padding: var(--spacing-lg);
+    }
+    
+    .cta-content h3 {
+        font-size: var(--font-size-xl);
+    }
+}
+
 body {
     font-family: var(--font-family);
     line-height: 1.6;
