@@ -163,10 +163,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 const headerHeight = document.querySelector('.header').offsetHeight;
                 const targetPosition = targetSection.offsetTop - headerHeight - 20;
                 
+                // Remover classe ativa de todos os links
+                navLinks.forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                
+                // Adicionar classe ativa ao link clicado imediatamente
+                this.classList.add('active');
+                
+                // Scroll para a seção
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+                
+                // Garantir que o estado ativo persista após o scroll
+                setTimeout(() => {
+                    if (!this.classList.contains('active')) {
+                        this.classList.add('active');
+                    }
+                }, 500);
             }
         });
     });
@@ -262,26 +278,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Lazy loading para imagens
+    // Garantir que as imagens sejam sempre visíveis
     const images = document.querySelectorAll('img[src^="https://images.unsplash.com"]');
-    const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.5s ease';
-                
-                img.onload = () => {
-                    img.style.opacity = '1';
-                };
-                
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
     images.forEach(img => {
-        imageObserver.observe(img);
+        img.style.opacity = '1';
+        img.style.transition = 'opacity 0.3s ease';
     });
     
     // Adicionar classe ativa ao menu baseado na seção visível
@@ -289,7 +290,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-menu a');
     
     function updateActiveNavLink() {
-        const scrollPos = window.scrollY + 100;
+        const scrollPos = window.scrollY + 150; // Aumentei o offset para melhor detecção
+        let currentSection = '';
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -297,27 +299,59 @@ document.addEventListener('DOMContentLoaded', function() {
             const sectionId = section.getAttribute('id');
             
             if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
+                currentSection = sectionId;
             }
         });
+        
+        // Remover classe ativa de todos os links
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // Adicionar classe ativa apenas ao link correspondente à seção atual
+        if (currentSection) {
+            const activeLink = document.querySelector(`.nav-menu a[href="#${currentSection}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
     }
     
-    window.addEventListener('scroll', updateActiveNavLink);
+    // Debounce function para evitar muitas chamadas durante o scroll
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateActiveNavLink, 100);
+    });
+    
+    // Executar uma vez no carregamento para definir o estado inicial
+    updateActiveNavLink();
     
     // Adicionar estilos para menu ativo
     const style = document.createElement('style');
     style.textContent = `
         .nav-menu a.active {
-            color: var(--primary-color) !important;
+            color: var(--secondary-color) !important;
+            background-color: rgba(251, 191, 36, 0.2) !important;
+            border-radius: 0.5rem !important;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 2px 4px rgba(251, 191, 36, 0.3) !important;
         }
         
         .nav-menu a.active::after {
             width: 100% !important;
+            background: var(--secondary-color) !important;
+        }
+        
+        .nav-menu a {
+            transition: all 0.3s ease !important;
+        }
+        
+        /* Garantir que as imagens sejam sempre visíveis */
+        img[src^="https://images.unsplash.com"] {
+            opacity: 1 !important;
+            transition: opacity 0.3s ease !important;
         }
         
         .amount-btn.selected {

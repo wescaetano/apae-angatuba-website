@@ -111,16 +111,16 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(37, 99, 235, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--primary-color);
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 [data-theme="dark"] .header {
-    background: rgba(15, 23, 42, 0.95);
-    border-bottom: 1px solid var(--gray-700);
+    background: rgba(37, 99, 235, 0.95);
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .nav-container {
@@ -138,7 +138,15 @@ body {
     gap: var(--spacing-xs);
     font-weight: 600;
     font-size: var(--font-size-lg);
-    color: var(--primary-color);
+    color: var(--white);
+}
+
+.img-logo {
+    height: 50px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .logo i {
@@ -154,14 +162,14 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--text-secondary);
+    color: var(--white);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
 }
 
 .nav-menu a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .nav-menu a::after {
@@ -171,7 +179,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     transition: width 0.3s ease;
 }
 
@@ -187,7 +195,7 @@ body {
 
 .theme-toggle {
     background: transparent;
-    border: 2px solid var(--gray-300);
+    border: 2px solid var(--white);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -196,23 +204,23 @@ body {
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: var(--text-secondary);
+    color: var(--white);
 }
 
 .theme-toggle:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
     transform: scale(1.1);
 }
 
 [data-theme="dark"] .theme-toggle {
-    border-color: var(--gray-600);
-    color: var(--text-secondary);
+    border-color: var(--white);
+    color: var(--white);
 }
 
 [data-theme="dark"] .theme-toggle:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .hamburger {
@@ -225,7 +233,7 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--text-secondary);
+    background: var(--white);
     transition: 0.3s;
 }
 
@@ -629,64 +637,7 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Testimonials Section */
-.testimonials {
-    padding: var(--spacing-2xl) 0;
-    background: var(--bg-secondary);
-}
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
-}
-
-.testimonial-card {
-    background: var(--bg-primary);
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-xl);
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-}
-
-.testimonial-content {
-    margin-bottom: var(--spacing-lg);
-}
-
-.testimonial-content p {
-    font-style: italic;
-    font-size: var(--font-size-lg);
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-
-.testimonial-author img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.testimonial-author h4 {
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
-.testimonial-author span {
-    color: var(--text-muted);
-    font-size: var(--font-size-sm);
-}
 
 /* Footer */
 .footer {
@@ -825,6 +776,11 @@ body {
         display: flex;
     }
     
+    .img-logo {
+        height: 40px;
+        max-width: 150px;
+    }
+    
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -867,6 +823,11 @@ body {
 @media (max-width: 480px) {
     .container {
         padding: 0 var(--spacing-xs);
+    }
+    
+    .img-logo {
+        height: 35px;
+        max-width: 120px;
     }
     
     .hero {
