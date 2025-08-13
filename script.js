@@ -44,35 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Função para copiar chave PIX
-    const copyPixBtn = document.getElementById('copyPixBtn');
-    const pixKey = document.getElementById('pixKey');
-    
-    if (copyPixBtn && pixKey) {
-        copyPixBtn.addEventListener('click', async function() {
-            try {
-                await navigator.clipboard.writeText(pixKey.textContent);
-                
-                // Feedback visual
-                const originalText = copyPixBtn.innerHTML;
-                copyPixBtn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
-                copyPixBtn.style.background = '#10b981';
-                
-                // Restaurar texto original após 2 segundos
-                setTimeout(() => {
-                    copyPixBtn.innerHTML = originalText;
-                    copyPixBtn.style.background = '';
-                }, 2000);
-                
-                // Mostrar notificação
-                showNotification('Chave PIX copiada com sucesso!', 'success');
-                
-            } catch (err) {
-                console.error('Erro ao copiar: ', err);
-                showNotification('Erro ao copiar chave PIX', 'error');
-            }
-        });
-    }
+
     
     // Função para mostrar notificações
     function showNotification(message, type = 'info') {

@@ -7,8 +7,8 @@
 
 :root {
     /* Cores principais */
-    --primary-color: #2563eb;
-    --primary-light: #3b82f6;
+    --primary-color: #442294;
+    --primary-light: #2c70df;
     --secondary-color: #fbbf24;
     --accent-color: #10b981;
     
@@ -767,39 +767,39 @@ body {
     font-weight: 500;
 }
 
-/* Donation Section */
-.donation {
+/* Contribution Section */
+.contribution {
     padding: var(--spacing-2xl) 0;
     background: linear-gradient(135deg, var(--accent-color) 0%, #059669 100%);
     color: var(--white);
 }
 
-.donation .section-title {
+.contribution .section-title {
     color: var(--white);
 }
 
-.donation .section-title::after {
+.contribution .section-title::after {
     background: var(--secondary-color);
 }
 
-.donation-content {
+.contribution-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-2xl);
     align-items: start;
 }
 
-.donation-text h3 {
+.contribution-text h3 {
     font-size: var(--font-size-2xl);
     margin-bottom: var(--spacing-md);
 }
 
-.donation-benefits {
+.contribution-benefits {
     list-style: none;
     margin-top: var(--spacing-md);
 }
 
-.donation-benefits li {
+.contribution-benefits li {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
@@ -807,12 +807,12 @@ body {
     font-size: var(--font-size-lg);
 }
 
-.donation-benefits i {
+.contribution-benefits i {
     color: var(--secondary-color);
     font-size: var(--font-size-lg);
 }
 
-.donation-card {
+.contribution-card {
     background: var(--bg-primary);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xl);
@@ -820,100 +820,88 @@ body {
     box-shadow: var(--shadow-xl);
 }
 
-.pix-section h3 {
+.carne-section h3 {
     color: var(--primary-color);
     margin-bottom: var(--spacing-lg);
     font-size: var(--font-size-xl);
 }
 
-.pix-key {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
+.carne-info p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+}
+
+.contact-info {
     background: var(--bg-secondary);
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     border-radius: var(--border-radius);
-    margin-bottom: var(--spacing-lg);
-    flex-wrap: wrap;
+    margin: var(--spacing-lg) 0;
+    border-left: 4px solid var(--primary-color);
 }
 
-.pix-label {
-    font-weight: 600;
-    color: var(--text-secondary);
-}
-
-.pix-value {
-    font-family: 'Courier New', monospace;
-    font-weight: 600;
+.contact-info h4 {
     color: var(--primary-color);
-    background: var(--bg-primary);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--border-radius);
-    border: 2px solid var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
 }
 
-.btn-copy {
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-weight: 600;
+.contact-details {
     display: flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    transition: background 0.3s ease;
-}
-
-.btn-copy:hover {
-    background: var(--primary-light);
-}
-
-.pix-instructions {
-    margin-bottom: var(--spacing-lg);
-}
-
-.pix-instructions h4 {
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-sm);
-}
-
-.pix-instructions ol {
-    padding-left: var(--spacing-lg);
-}
-
-.pix-instructions li {
-    margin-bottom: var(--spacing-xs);
-    color: var(--text-secondary);
-}
-
-.donation-amounts h4 {
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-sm);
-}
-
-.amount-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
     gap: var(--spacing-sm);
 }
 
-.amount-btn {
-    background: var(--bg-secondary);
-    border: 2px solid var(--gray-200);
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-weight: 600;
+.contact-details p {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
     color: var(--text-secondary);
-    transition: all 0.3s ease;
+    font-size: var(--font-size-base);
 }
 
-.amount-btn:hover {
-    background: var(--primary-color);
+.contact-details i {
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+}
+
+.contact-details strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.quote-section {
+    margin-top: var(--spacing-lg);
+    text-align: center;
+}
+
+.quote-section blockquote {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     color: var(--white);
-    border-color: var(--primary-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    font-style: italic;
+    font-size: var(--font-size-lg);
+    position: relative;
+    margin: 0;
+}
+
+.quote-section blockquote i:first-child {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    font-size: var(--font-size-xl);
+    opacity: 0.7;
+}
+
+.quote-section blockquote i:last-child {
+    position: absolute;
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+    font-size: var(--font-size-xl);
+    opacity: 0.7;
 }
 
 
@@ -988,6 +976,19 @@ body {
 }
 
 .contact-info i {
+    color: var(--secondary-color);
+    width: 20px;
+}
+
+.footer-contact-info p {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    color: var(--gray-300);
+}
+
+.footer-contact-info i {
     color: var(--secondary-color);
     width: 20px;
 }
@@ -1081,17 +1082,8 @@ body {
         direction: ltr;
     }
     
-    .donation-content {
+    .contribution-content {
         grid-template-columns: 1fr;
-    }
-    
-    .amount-buttons {
-        grid-template-columns: 1fr;
-    }
-    
-    .pix-key {
-        flex-direction: column;
-        align-items: stretch;
     }
     
     .newsletter-form {
@@ -1125,7 +1117,7 @@ body {
         padding: var(--spacing-lg);
     }
     
-    .donation-card {
+    .contribution-card {
         padding: var(--spacing-lg);
     }
 }
