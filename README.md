@@ -91,6 +91,3 @@ Entre em contato para saber como se tornar voluntário.
 
 Este projeto foi desenvolvido para a APAE de Angatuba. Todos os direitos reservados.
 
----
-
-**Desenvolvido com ❤️ para a inclusão** 
