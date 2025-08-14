@@ -25,7 +25,6 @@ Deploy: https://wescaetano.github.io/apae-angatuba-website/
 - **Sobre**: História e missão da instituição
 - **Impacto**: Números e resultados alcançados
 - **Doações**: Sistema de doação via PIX
-- **Depoimentos**: Histórias de transformação
 - **Contato**: Informações de contato e localização
 
 ### Recursos Interativos
@@ -33,7 +32,6 @@ Deploy: https://wescaetano.github.io/apae-angatuba-website/
 - Smooth scroll para links internos
 - Animações suaves
 - Notificações de feedback
-- Copiar chave PIX com um clique
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -54,42 +52,6 @@ apae-website/
 └── README.md           # Documentação
 ```
 
-## 🚀 Como Executar
-
-### Opção 1: Servidor Python
-```bash
-python -m http.server 8000
-```
-
-### Opção 2: Servidor Node.js
-```bash
-npx serve .
-```
-
-### Opção 3: PowerShell (Windows)
-```powershell
-.\server.ps1
-```
-
-Após executar um dos comandos acima, acesse `http://localhost:8000` no seu navegador.
-
-## 🎨 Personalização
-
-### Cores
-As cores principais podem ser alteradas editando as variáveis CSS no arquivo `styles.css`:
-
-```css
-:root {
-    --primary-color: #2563eb;
-    --secondary-color: #fbbf24;
-    --accent-color: #10b981;
-}
-```
-
-### Conteúdo
-- Edite o arquivo `index.html` para modificar textos e informações
-- Atualize imagens substituindo os links do Unsplash
-- Modifique a chave PIX na seção de doações
 
 ## 📱 Responsividade
 
@@ -107,30 +69,6 @@ O site é totalmente responsivo e funciona perfeitamente em:
 - Suporte a leitores de tela
 
 ## 🔧 Funcionalidades JavaScript
-
-### Toggle de Tema
-```javascript
-// Salva preferência no localStorage
-localStorage.setItem('theme', 'dark');
-
-// Detecta preferência do sistema
-window.matchMedia('(prefers-color-scheme: dark)')
-```
-
-### Smooth Scroll
-```javascript
-// Navegação suave para links internos
-window.scrollTo({
-    top: targetPosition,
-    behavior: 'smooth'
-});
-```
-
-### Copiar PIX
-```javascript
-// Copia chave PIX para área de transferência
-await navigator.clipboard.writeText(pixKey);
-```
 
 ## 📞 Informações de Contato
 
