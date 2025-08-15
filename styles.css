@@ -66,27 +66,17 @@
 
 /* Modo escuro */
 [data-theme="dark"] {
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --text-primary: #f1f5f9;
+    --bg-primary: #0b1220;
+    --bg-secondary: #111827;
+    --text-primary: #e5e7eb;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
-    
-    --gray-50: #0f172a;
-    --gray-100: #1e293b;
-    --gray-200: #334155;
-    --gray-300: #475569;
-    --gray-400: #64748b;
-    --gray-500: #94a3b8;
-    --gray-600: #cbd5e1;
-    --gray-700: #e2e8f0;
-    --gray-800: #f1f5f9;
-    --gray-900: #f8fafc;
-    
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+
+    /* Sombras mais profundas no dark mode */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
 }
 
 /* Arte que Alimenta Section - Novo Design */
@@ -95,6 +85,10 @@
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     position: relative;
     overflow: hidden;
+}
+
+[data-theme="dark"] .arte-alimenta {
+    background: linear-gradient(135deg, #312e81 0%, #1e293b 100%);
 }
 
 .arte-alimenta::before {
@@ -398,8 +392,8 @@ body {
 }
 
 [data-theme="dark"] .header {
-    background: rgba(37, 99, 235, 0.95);
-    border-bottom: 1px solid var(--primary-color);
+    background: rgba(2, 6, 23, 0.9);
+    border-bottom: 1px solid #0f172a;
 }
 
 .nav-container {
@@ -525,6 +519,10 @@ body {
     overflow: hidden;
 }
 
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #0b1220 0%, #1e293b 100%);
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -620,6 +618,16 @@ body {
     background: var(--white);
     color: var(--primary-color);
     transform: translateY(-2px);
+}
+
+[data-theme="dark"] .btn-secondary {
+    color: var(--gray-100);
+    border-color: var(--gray-300);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: var(--gray-100);
+    color: var(--gray-900);
 }
 
 .hero-image {
@@ -774,6 +782,10 @@ body {
     color: var(--white);
 }
 
+[data-theme="dark"] .contribution {
+    background: linear-gradient(135deg, #065f46 0%, #064e3b 100%);
+}
+
 .contribution .section-title {
     color: var(--white);
 }
@@ -911,6 +923,19 @@ body {
     background: var(--gray-900);
     color: var(--white);
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+
+[data-theme="dark"] .footer {
+    background: #0b1220;
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .footer-section h4 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .footer-bottom {
+    border-top-color: #0f172a;
 }
 
 .footer-content {
