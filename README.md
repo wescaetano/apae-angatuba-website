@@ -1,6 +1,6 @@
 # APAE Angatuba - Website
 
-Site oficial da APAE (Associação de Pais e Amigos dos Excepcionais) de Angatuba, desenvolvido com foco na acessibilidade e experiência do usuário.
+Site com objetivo de arrecadar fundos para a APAE (Associação de Pais e Amigos dos Excepcionais) de Angatuba, desenvolvido com foco na acessibilidade e experiência do usuário.
 
 Deploy: https://wescaetano.github.io/apae-angatuba-website/
 
@@ -77,13 +77,7 @@ O site é totalmente responsivo e funciona perfeitamente em:
 - **Email**: contato@apaeangatuba.org.br
 - **Endereço**: Angatuba, SP - Brasil
 - **Horário**: Segunda a Sexta: 8h às 17h
-
-## 🤝 Como Ajudar
-
-### Doação via PIX
-- **Chave**: apae.angatuba@email.com
-- **Valores sugeridos**: R$ 25, R$ 50, R$ 100, R$ 200
-
+- 
 ### Voluntariado
 Entre em contato para saber como se tornar voluntário.
 
